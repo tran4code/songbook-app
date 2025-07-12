@@ -1,0 +1,29 @@
+.song-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: #888;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  margin-top: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.section-lines {
+  padding-left: 0;
+}
+
+@media (max-width: 768px) {
+  .song-section {
+    margin-bottom: 32px;
+  }
+  
+  .section-title {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+}

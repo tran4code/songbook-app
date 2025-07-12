@@ -1,0 +1,23 @@
+.song-line {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #e0e0e0;
+  font-family: 'Georgia', serif;
+  min-height: 28px;
+  position: relative;
+}
+
+.song-line:empty::before {
+  content: 'Click to add lyrics...';
+  color: #666;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .song-line {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}

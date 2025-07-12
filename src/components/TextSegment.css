@@ -1,0 +1,174 @@
+.text-segment-container {
+  position: relative;
+  display: inline;
+}
+
+.text-segment {
+  cursor: pointer;
+  padding: 2px 4px;
+  margin: 0 2px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.text-segment.has-alternatives {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.text-segment.has-alternatives:hover {
+  background-color: #357abd;
+  transform: translateY(-1px);
+}
+
+.text-segment:not(.has-alternatives):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.alternatives-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 150px;
+  max-width: 200px;
+  margin-top: 5px;
+  padding: 8px 0;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.current-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #4a90e2;
+  color: white;
+  border-bottom: 1px solid #444;
+  margin-bottom: 4px;
+}
+
+.current-label {
+  font-size: 0.8em;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.alternative-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.alternative-option:hover {
+  background-color: #3a3a3a;
+}
+
+.option-text {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.15s ease;
+  opacity: 0.7;
+}
+
+.delete-button:hover {
+  opacity: 1;
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.add-alternative-button {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #4a90e2;
+  border-top: 1px solid #444;
+  margin-top: 4px;
+  text-align: center;
+  font-size: 0.9em;
+  transition: all 0.15s ease;
+}
+
+.add-alternative-button:hover {
+  background-color: #3a3a3a;
+  color: #5ba0f2;
+}
+
+.add-alternative-input {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  border-top: 1px solid #444;
+  margin-top: 4px;
+}
+
+.alternative-input {
+  flex-grow: 1;
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 6px 8px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.alternative-input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.confirm-button {
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.15s ease;
+}
+
+.confirm-button:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.confirm-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
