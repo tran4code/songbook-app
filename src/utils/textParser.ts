@@ -34,7 +34,7 @@ export const parseTextToSections = (text: string): ParsedSection[] => {
     
     // Check if line is a section header (all caps, or contains common section indicators)
     const isSectionHeader = 
-      /^[A-Z\s\d]+$/.test(line) && line.length > 0 && line.length < 30 ||
+      (/^[A-Z\s\d]+$/.test(line) && line.length > 0 && line.length < 30) ||
       /^(verse|chorus|bridge|intro|outro|pre-chorus|refrain)/i.test(line);
     
     if (isSectionHeader) {
